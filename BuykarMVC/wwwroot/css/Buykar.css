@@ -1,0 +1,49 @@
+
+@media (max-width: 768px){
+    .START_RIDE button{
+        min-height: auto;
+        min-width: auto;
+        font-size: 10px;
+        font-weight: 900;
+        text-align: center
+    }
+}
+
+.btn-1{
+    border: 2px solid blue;
+    color: blue;
+}
+.btn-1 a:hover{
+color: white;
+}
+.btn-1:hover{
+    background-color: blue;
+}
+.btn-2{
+    border: 2px solid blue;
+    color: blue;
+}
+.btn-2 a:hover{
+color: white;
+}
+.btn-2:hover{
+    background-color: blue;
+}
+
+.Reg_form {
+    background-image: url('../img/deer hunts.gif');
+/*    background-repeat:no-repeat;
+*/    background-position:center;
+    background-size:cover;
+    min-height:100vh;
+    overflow-x:hidden;
+}
+.btn-down i{
+    color: blue;
+}
+.footer{
+    position:absolute;
+    bottom:0px;
+    left:0;
+    align-items:center;
+}

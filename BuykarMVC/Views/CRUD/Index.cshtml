@@ -1,0 +1,40 @@
+﻿@model List<User>
+@{
+    Layout = "_LayoutSignUp";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="d-flex justify-content-center">
+            <div class="col-md-8 bg-primary d-flex justify-content-center align-items-center text-white">USER DETAILS</div>
+            <div class="ps-2"><a class="btn btn-warning" asp-controller="CRUD" asp-action="SignUp">+ Add</a></div>
+        </div>
+    </div>
+</div>
+<hr />
+<table class="table table-bordered border-info table-striped">
+    <thead class="text-center">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Phone Number</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var a in Model)
+        {
+            <tr>
+                <td>@a.Name</td>
+                <td>@a.Email</td>
+                <td>@a.Password</td>
+                <td>@a.Phone_Number</td>
+                <td class="text-center">
+                    <a asp-controller="CRUD" asp-action="Edit" asp-route-id="@a.Id" class="btn btn-warning">Edit</a>
+                    <a asp-controller="CRUD" asp-action="Delete" asp-route-id="@a.Id" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,52 @@
+﻿@model User
+@{
+    Layout = "_LayoutSignUp";
+}
+<link href="~/css/buykar.css" rel="stylesheet" />
+<body class="Reg_form">
+
+    <!----Heading--->
+    <div class="container text-center mt-2 mb-3">
+        <div class="row">
+            <h1 class="opacity-25"><b>TRAVEL HUNTER</b></h1>
+        </div>
+    </div>
+
+    <!------Form----->
+    <div class=" d-flex">
+        <div class="container col-md-6 col-10 p-3" style="box-shadow:rgb(164, 134, 247) 10px -2px 60px 3px; border-radius: 25px; backdrop-filter: blur(5px);">
+            <div class="box">
+                <form method="post" class="row d-flex justify-content-center">
+                    <div class="tablebody col-10">
+                        <div class="col-md-12 col-12">
+                            <label asp-for="Name" class="form-label pe-1">User Name</label><span class="text-danger" asp-validation-for="Name"></span>
+                            <input asp-for="Name" type="text" class="form-control border-primary" id="Name">
+                        </div>
+                        <div class="col-md-12 col-12">
+                            <label asp-for="Email" class="form-label pe-1">Email</label><span class="text-danger" asp-validation-for="Email"></span>
+                            <input asp-for="Email" type="email" class="form-control border-primary" id="Email" placeholder="Example@gmail.com">
+                        </div>
+                        <div class="col-md-12 col-12">
+                            <label asp-for="Password" class="form-label pe-1">Password</label><span class="text-danger" asp-validation-for="Password"></span>
+                            <input asp-for="Password" type="password" class="form-control border-primary" id="password">
+                        </div>
+                        <div class="col-md-12 col-12">
+                            <label asp-for="ConfirmPassword" class="form-label pe-1">Confirm Password</label><span class="text-danger" asp-validation-for="ConfirmPassword"></span>
+                            <input asp-for="ConfirmPassword" type="password" class="form-control border-primary" id="password">
+                        </div>
+                        <div class="col-md-12 col-12">
+                            <label asp-for="Phone_Number" class="form-label pe-1">Phone Number</label><span class="text-danger" asp-validation-for="Phone_Number"></span>
+                            <input asp-for="Phone_Number" type="number" class="form-control border-primary" id="PhoneNumber">
+                        </div>
+                        <div class="col-12 text-center">
+                            <button type="submit" class="btn btn-warning mt-2">Update</button>
+                        </div>
+                        <div class="col-12 text-warning text-center"><lable>@ViewBag.Notification</lable></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+</body>

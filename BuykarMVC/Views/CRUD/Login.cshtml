@@ -1,0 +1,42 @@
+﻿@model User
+@{
+    Layout = "_LayoutSignUp";
+}
+<link href="~/css/buykar.css" rel="stylesheet" />
+<body class="Reg_form">
+
+    <!----Heading--->
+    <div class="container text-center mt-2 mb-3">
+        <div class="row">
+            <h1 class="opacity-25"><b>TRAVEL HUNTER</b></h1>
+        </div>
+    </div>
+
+    <!------Form----->
+    <div class=" d-flex">
+        <div class="container col-md-6 col-10 p-3" style="box-shadow:rgb(164, 134, 247) 10px -2px 60px 3px; border-radius: 25px; backdrop-filter: blur(5px);">
+            <div class="box">
+                <form method="post" class="row d-flex justify-content-center g-1">
+                    <div class="tablebody col-10">
+                        <div class="col-md-12 col-12">
+                            <label asp-for="Name" class="form-label">User Name</label>
+                            <input asp-for="Name" type="text" class="form-control border-primary" id="Name">
+                            <span class="text-danger" asp-validation-for="Name"></span>
+                        </div>
+                        <div class="col-md-12 col-12">
+                            <label asp-for="Password" class="form-label">Password</label>
+                            <input asp-for="Password" type="password" class="form-control border-primary" id="password">
+                            <span class="text-danger" asp-validation-for="Password"></span>
+                        </div>
+                        <div class="col-12 text-center">
+                            <button type="submit" class="btn btn-success mt-2">Login in</button>
+                        </div>
+                        <div class="col-12 text-danger text-center"><lable>@ViewBag.Notification</lable></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+</body>

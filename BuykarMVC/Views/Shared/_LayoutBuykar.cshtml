@@ -1,0 +1,197 @@
+﻿@model Views_CRUD_Login
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+</head>
+<body>
+      <!-------Navbar------->
+  <nav class="navbar navbar-expand-lg bg-info navbar-light fs-6 h1">
+    <div class="container-fluid">
+            <img src="~/Img/Logo.png" alt="BrandName" style="width: 80px; height: 30px;" class="me-5 ms-2">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-white">
+          <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" asp-controller="Home" asp-action="Index">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Today deals </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Customer Service </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropdown
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" asp-controller="Home" asp-action="Index" asp-route-id="Car" >Car</a></li>
+              <li><a class="dropdown-item" asp-controller="Home" asp-action="Index" asp-route-id="Bike" >Bike</a></li>
+              <li><a class="dropdown-item" asp-controller="Home" asp-action="Index" asp-route-id="Scooter" >Scooter</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#">E-Vehical</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form class="d-flex">
+                    @if (ViewData["UserName"] != null)
+                    {
+                        <button class="btn btn-outline-light" asp-controller="Home" asp-action="Index" type="submit">LogOut</button>
+                    }
+                    else
+                    {
+                        <button class="btn btn-outline-light" asp-controller="CRUD" asp-action="Login" type="submit">LogIn</button>
+                    }
+                    @if (ViewData["UserName"]!= null)
+                    {
+                        <span class="ms-1 border rounded p-2">Welcome @ViewData["UserName"]</span>
+                    }
+                    else
+                    {
+                        <span class="ms-1 border rounded p-2">Guest!</span>
+                    }
+                </form>
+      </div>
+    </div>
+  </nav>
+
+
+    <div style="overflow-x:hidden">
+        @RenderBody()
+    </div>
+
+
+    <div class="mt-5">
+
+        <!-- Footer -->
+        <footer class="text-center text-lg-start text-white" style="background-color: #0055ff">
+            <!-- Section: Social media -->
+            <section class="d-flex justify-content-between p-4" style="background-color: #2600ff">
+                <!-- Left -->
+                <div class="me-5">
+                    <span>Get connected with us on social networks:</span>
+                </div>
+                <!-- Left -->
+                <!-- Right -->
+                <div>
+                    <a href="" class="text-white me-4">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="" class="text-white me-4">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="" class="text-white me-4">
+                        <i class="fab fa-google"></i>
+                    </a>
+                    <a href="" class="text-white me-4">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="" class="text-white me-4">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="" class="text-white me-4">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+                <!-- Right -->
+            </section>
+            <!-- Section: Social media -->
+            <!-- Section: Links  -->
+            <section class="">
+                <div class="container text-center text-md-start mt-5">
+                    <!-- Grid row -->
+                    <div class="row mt-3">
+                        <!-- Grid column -->
+                        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                            <!-- Content -->
+                            <h6 class="text-uppercase fw-bold">BuyKar</h6>
+                            <hr class="mb-4 mt-0 d-inline-block mx-auto"
+                                style="width: 60px; background-color: #7c4dff; height: 2px" />
+                            <p>
+                                Here you can Purchase for your Ride & for your favourite place.<br>
+                                Why are you waiting <span class="text-warning">Get Ride!</span>
+
+                            </p>
+                        </div>
+                        <!-- Grid column -->
+                        <!-- Grid column -->
+                        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                            <!-- Links -->
+                            <h6 class="text-uppercase fw-bold">Products</h6>
+                            <hr class="mb-4 mt-0 d-inline-block mx-auto"
+                                style="width: 60px; background-color: #7c4dff; height: 2px" />
+                            <p>
+                                <a href="#!" class="text-white">Motor Bike's</a>
+                            </p>
+                            <p>
+                                <a href="#!" class="text-white">Car's</a>
+                            </p>
+                            <p>
+                                <a href="#!" class="text-white">E-Vehical's</a>
+                            </p>
+                        </div>
+                        <!-- Grid column -->
+                        <!-- Grid column -->
+                        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                            <!-- Links -->
+                            <h6 class="text-uppercase fw-bold">links</h6>
+                            <hr class="mb-4 mt-0 d-inline-block mx-auto"
+                                style="width: 60px; background-color: #7c4dff; height: 2px" />
+                            <p>
+                                <a href="#!" class="text-white">BuyKar Account</a>
+                            </p>
+                            <p>
+                                <a href="#!" class="text-white">Become an Trader</a>
+                            </p>
+                            <p>
+                                <a href="#!" class="text-white">Shipping Rates</a>
+                            </p>
+                            <p>
+                                <a href="#!" class="text-white">Help</a>
+                            </p>
+                        </div>
+                        <!-- Grid column -->
+                        <!-- Grid column -->
+                        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                            <!-- Links -->
+                            <h6 class="text-uppercase fw-bold">Contact</h6>
+                            <hr class="mb-4 mt-0 d-inline-block mx-auto"
+                                style="width: 60px; background-color: #7c4dff; height: 2px" />
+                            <p><i class="fas fa-home mr-3"></i> The World Trade Center, OMR, Chennai </p>
+                            <p><i class="fas fa-envelope mr-3"></i> info@example.com</p>
+                            <p><i class="fas fa-phone mr-3"></i> + 3583159220</p>
+                            <p><i class="fas fa-print mr-3"></i> + 464644646</p>
+                        </div>
+                        <!-- Grid column -->
+                    </div>
+                    <!-- Grid row -->
+                </div>
+            </section>
+            <!-- Section: Links  -->
+            <!-- Copyright -->
+            <div class="text-center p-3" style="background-color: #2600ff">
+                © 2024 Copyright:
+                <a class="text-white" href="#">MDBuyKar.com</a>
+            </div>
+            <!-- Copyright -->
+        </footer>
+        <!-- Footer -->
+
+    </div>
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
