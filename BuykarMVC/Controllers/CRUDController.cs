@@ -27,12 +27,12 @@ namespace BuykarMVC.Controllers
         [HttpPost]
         public IActionResult SignUp(User a)
         {
-            if(_data.UserTable.Any(x=>x.Name == a.Name))
+            if(ModelState.IsValid &&  _data.UserTable.Any(x=>x.Name == a.Name))
             {
                 ViewBag.Notification = "This User Name already exists.!";
                 return View();
             }  
-            else if(_data.UserTable.Any(x=>x.Email == a.Email))
+            else if(ModelState.IsValid &&  _data.UserTable.Any(x=>x.Email == a.Email))
             {
                 ViewBag.Notification = "This Email Id has already exists.!";
                 return View();
@@ -79,13 +79,13 @@ namespace BuykarMVC.Controllers
         [HttpPost]
         public IActionResult Login(User a)
         {
-            if (_data.UserTable.Any(x => x.Name == a.Name && x.Password == a.Password))
+            if (ModelState.IsValid &&  _data.UserTable.Any(x => x.Name == a.Name && x.Password == a.Password))
             {
                 TempData["Name"] = a.Name;
 
                 return RedirectToAction("Index", "Home");
             } 
-            else if (_data.UserTable.Any(x => x.Name != a.Name && x.Password != a.Password))
+            else if (ModelState.IsValid &&  _data.UserTable.Any(x => x.Name != a.Name && x.Password != a.Password))
             {
                 ViewBag.Notification = "The User Name or Password doesn't match";
                 return View();
