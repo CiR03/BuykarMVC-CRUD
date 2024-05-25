@@ -1,6 +1,6 @@
 # BuyKarMVC-CRUD Operation
 
-"This project is similar to the previous BuyKar project fully res. 
+"This project is similar to the previous BuyKar project. 
 
 However, in this project, I'm using the ASP.NET Framework. 
 
