@@ -55,9 +55,13 @@ namespace BuykarMVC.Controllers
         [HttpPost]
         public IActionResult Edit(User edata)
         {
-            _data.UserTable.Update(edata);
-            _data.SaveChanges();
-            return RedirectToAction("Index");
+             if (ModelState.IsValid)
+             {
+                 _data.UserTable.Update(edata);
+                 _data.SaveChanges();
+                 return RedirectToAction("Index");
+             }
+             return View();
         }
 
         public IActionResult Delete(int id)
@@ -68,8 +72,7 @@ namespace BuykarMVC.Controllers
             _data.SaveChanges();
             return RedirectToAction("Index");
         }
-/*        [HttpGet]
-*/      public IActionResult Login()
+        public IActionResult Login()
         {
             return View();
         }
