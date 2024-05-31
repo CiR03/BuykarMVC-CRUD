@@ -9,3 +9,5 @@ which includes Create, Read, Update, and Delete functionalities.
 
 Moreover, I've implemented a Login-Logout function."
 and the entire application is fully mobile responsive.
+
+Note : And Check out the video for a glimpse of what I've been working on it.!
