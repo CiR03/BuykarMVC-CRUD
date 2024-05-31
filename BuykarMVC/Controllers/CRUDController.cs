@@ -72,6 +72,7 @@ namespace BuykarMVC.Controllers
             _data.SaveChanges();
             return RedirectToAction("Index");
         }
+        [HttpGet]
         public IActionResult Login()
         {
             return View();
@@ -79,22 +80,20 @@ namespace BuykarMVC.Controllers
         [HttpPost]
         public IActionResult Login(User a)
         {
-            if (ModelState.IsValid &&  _data.UserTable.Any(x => x.Name == a.Name && x.Password == a.Password))
+
+            if (_data.UserTable.Any(x => x.Name == a.Name && x.Password == a.Password))
             {
                 TempData["Name"] = a.Name;
-
                 return RedirectToAction("Index", "Home");
-            } 
-            else if (ModelState.IsValid &&  _data.UserTable.Any(x => x.Name != a.Name && x.Password != a.Password))
-            {
-                ViewBag.Notification = "The User Name or Password doesn't match";
-                return View();
+            }
+            else if (_data.UserTable.Any(x => x.Name != a.Name || x.Password != a.Password))
+                {
+                    ViewBag.Notification = "The User Name or Password doesn't match";
 
-            }
-            else
-            {
-                return View();
-            }
+                    return View();
+
+                }
+            else { return View(); }
         }
 
     }
