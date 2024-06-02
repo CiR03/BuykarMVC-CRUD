@@ -2,7 +2,7 @@
 
 "This project is similar to the previous BuyKar project. 
 
-However, in this project, I'm using the ASP.NET Framework. 
+However, in this project, I'm using ASP.NET Framework. 
 
 Additionally, I have incorporated CRUD operations using ASP.NET Core MVC,
 which includes Create, Read, Update, and Delete functionalities. 
